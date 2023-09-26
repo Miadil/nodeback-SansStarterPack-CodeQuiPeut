@@ -17,4 +17,5 @@ const findOne = async (id) => {
     console.log(err);
   }
 };
+
 module.exports = { findAll, findOne };
