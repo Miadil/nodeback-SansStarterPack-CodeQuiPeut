@@ -11,8 +11,8 @@ const hashPassword = (plainPassword) => {
   return argon2.hash(plainPassword, hashingOption);
 };
 
-const verifyPassword = (plainPassword, hashPasswordFormBdd) => {
-  return argon2.verify(plainPassword, hashPasswordFormBdd, hashingOption);
+const verifyPassword = (hashPasswordFormBdd, plainPassword) => {
+  return argon2.verify(hashPasswordFormBdd, plainPassword, hashingOption);
 };
 
 module.exports = { hashPassword, verifyPassword };
