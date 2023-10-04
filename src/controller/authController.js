@@ -23,6 +23,7 @@ const login = async (req, res) => {
     }
     delete user.password;
     const token = encodeJWT(user);
+
     // TODO penser a passer  secure: false a secure: true avant la mise en prod
     res.cookie("auth_token", token, { httpOnly: true, secure: false });
     res.status(200).json({ user: user.name });
